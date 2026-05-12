@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+
+    /* Fonts */
+    --font-display: "Inter", sans-serif;
+
+    /* Colors */
+    --color-primary: #2563EB;
+    --color-primary-light: #3B82F6;
+
+    --color-dark: #050816;
+    --color-dark-light: #0B1120;
+    --color-dark-card: #10172A;
+
+    --color-text: #FFFFFF;
+    --color-text-muted: #94A3B8;
+}
+
+/* GLOBAL STYLES */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050816;
+    color: white;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+/* REUSABLE COMPONENTS */
+
+@layer components {
+
+    .container-custom {
+        @apply max-w-7xl mx-auto px-6 lg:px-12;
+    }
+
+    .btn-primary {
+        @apply bg-blue-600 hover:bg-blue-500 transition duration-300 px-7 py-4 rounded-full font-medium inline-flex items-center justify-center;
+    }
+
+    .btn-secondary {
+        @apply border border-white/20 hover:border-blue-500 transition duration-300 px-7 py-4 rounded-full font-medium inline-flex items-center justify-center;
+    }
+
+    .section-title {
+        @apply text-4xl md:text-5xl font-black leading-tight;
+    }
+
+    .section-subtitle {
+        @apply text-gray-400 text-lg leading-relaxed;
+    }
+
+    .glass-effect {
+        @apply bg-white/5 backdrop-blur-xl border border-white/10;
+    }
+}

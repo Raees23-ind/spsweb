@@ -1,0 +1,537 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- PRIMARY SEO -->
+<title>Work Gallery | Surve Prozone Security Systems</title>
+
+<meta name="description"
+      content="Explore Surve Prozone Security Systems work gallery featuring CCTV installations, fire safety systems, biometric access control, solar infrastructure and enterprise security projects.">
+
+<meta name="keywords"
+      content="Surve Prozone gallery, CCTV project gallery, fire safety installation, biometric access control, solar project India, security installation work">
+
+<meta name="author"
+      content="Surve Prozone Security Systems">
+
+<meta name="robots"
+      content="index, follow">
+
+<meta name="theme-color"
+      content="#050816">
+
+<!-- FAVICON -->
+<link rel="icon"
+      type="image/png"
+      href="{% static 'images/favicon.png' %}">
+
+<!-- OPEN GRAPH -->
+<meta property="og:title"
+      content="Work Gallery | Surve Prozone Security Systems">
+
+<meta property="og:description"
+      content="View professional security, surveillance, fire safety, biometric and solar infrastructure work by Surve Prozone.">
+
+<meta property="og:image"
+      content="{% static 'images/og-image.jpg' %}">
+
+<meta property="og:type"
+      content="website">
+
+<meta property="og:site_name"
+      content="Surve Prozone Security Systems">
+
+<!-- TWITTER / X PREVIEW -->
+<meta name="twitter:card"
+      content="summary_large_image">
+
+<meta name="twitter:title"
+      content="Work Gallery | Surve Prozone Security Systems">
+
+<meta name="twitter:description"
+      content="Explore CCTV, fire safety, biometric and solar security project work by Surve Prozone.">
+
+<meta name="twitter:image"
+      content="{% static 'images/og-image.jpg' %}">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+          rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- TAILWIND CSS -->
+    <link rel="stylesheet"
+          href="{% static 'css/style.css' %}">
+
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- ========================= -->
+    <!-- NAVBAR -->
+    <!-- ========================= -->
+
+    <nav class="fixed top-0 left-0 w-full z-[99999] border-b border-white/10 bg-black/20 backdrop-blur-xl pointer-events-auto">
+
+        <div class="container-custom">
+
+            <div class="flex items-center justify-between h-20">
+
+                <!-- LOGO -->
+                <a href="{% url 'home' %}#home"
+                   class="flex items-center gap-3">
+
+                    <img src="{% static 'images/logo.jpg' %}"
+                         alt="logo"
+                         class="w-12 h-12 md:w-14 md:h-14 object-contain">
+
+                    <div>
+
+                        <h1 class="text-lg md:text-xl font-bold tracking-wide">
+                            Surve Prozone
+                        </h1>
+
+                        <p class="text-[10px] md:text-xs text-gray-400">
+                            Security Systems
+                        </p>
+
+                    </div>
+
+                </a>
+
+                <!-- DESKTOP MENU -->
+                <div class="hidden lg:flex items-center gap-10">
+
+                    <a href="{% url 'home' %}#home"
+                       class="hover:text-blue-400 transition">
+                        Home
+                    </a>
+
+                    <a href="{% url 'home' %}#about"
+                       class="hover:text-blue-400 transition">
+                        About
+                    </a>
+
+                    <a href="{% url 'home' %}#services"
+                       class="hover:text-blue-400 transition">
+                        Services
+                    </a>
+
+                    <a href="{% url 'home' %}#projects"
+                       class="hover:text-blue-400 transition">
+                        Projects
+                    </a>
+
+                    <a href="{% url 'gallery' %}"
+                       class="text-blue-400 transition">
+                        Gallery
+                    </a>
+
+                    <a href="{% url 'home' %}#contact"
+                       class="hover:text-blue-400 transition">
+                        Contact
+                    </a>
+
+                </div>
+
+                <!-- DESKTOP BUTTON -->
+                <a href="{% url 'home' %}#contact"
+                   class="btn-primary hidden lg:flex">
+
+                    Get Consultation
+
+                </a>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button id="menu-btn"
+                        type="button"
+                        class="lg:hidden text-white text-3xl">
+
+                    ☰
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- MENU OVERLAY -->
+    <div id="menu-overlay"
+         class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[99990] hidden lg:hidden">
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu"
+         class="fixed top-0 right-[-100%] w-[80%] sm:w-[60%] h-screen bg-[#081120] z-[999999] transition-all duration-500 lg:hidden">
+
+        <div class="p-8">
+
+            <div class="flex justify-end">
+
+                <button id="close-menu"
+                        type="button"
+                        class="text-4xl text-white">
+                    ×
+                </button>
+
+            </div>
+
+            <div class="flex flex-col gap-8 mt-16 text-xl">
+
+                <a href="{% url 'home' %}#home"
+                   class="hover:text-blue-400 transition">
+                    Home
+                </a>
+
+                <a href="{% url 'home' %}#about"
+                   class="hover:text-blue-400 transition">
+                    About
+                </a>
+
+                <a href="{% url 'home' %}#services"
+                   class="hover:text-blue-400 transition">
+                    Services
+                </a>
+
+                <a href="{% url 'home' %}#projects"
+                   class="hover:text-blue-400 transition">
+                    Projects
+                </a>
+
+                <a href="{% url 'gallery' %}"
+                   class="text-blue-400 transition">
+                    Gallery
+                </a>
+
+                <a href="{% url 'home' %}#contact"
+                   class="hover:text-blue-400 transition">
+                    Contact
+                </a>
+
+                <a href="{% url 'home' %}#contact"
+                   class="btn-primary mt-6 text-center">
+                    Get Consultation
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- GALLERY HERO -->
+    <!-- ========================= -->
+
+    <section class="relative min-h-[70vh] flex items-center overflow-hidden pt-24">
+
+        <div class="absolute inset-0 pointer-events-none bg-gradient-to-b from-[#050816] via-[#081120] to-[#050816]"></div>
+
+        <div class="absolute top-[-150px] left-[-150px] pointer-events-none w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[140px]"></div>
+
+        <div class="absolute bottom-[-150px] right-[-150px] pointer-events-none w-[500px] h-[500px] bg-red-500/10 rounded-full blur-[140px]"></div>
+
+        <div class="absolute inset-0 pointer-events-none opacity-[0.03]"
+             style="
+                background-image:
+                linear-gradient(to right, white 1px, transparent 1px),
+                linear-gradient(to bottom, white 1px, transparent 1px);
+                background-size: 80px 80px;
+             ">
+        </div>
+
+        <div class="container-custom relative z-10 py-16 text-center">
+
+            <p class="uppercase tracking-[4px] text-blue-400 text-xs sm:text-sm mb-6"
+               data-aos="fade-up">
+                Work Gallery
+            </p>
+
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight"
+                data-aos="fade-up"
+                data-aos-delay="100">
+
+                Real Work.
+                <span class="text-blue-500">Real Security.</span>
+
+            </h1>
+
+            <p class="mt-6 md:mt-8 text-gray-400 text-base md:text-lg leading-relaxed max-w-3xl mx-auto"
+               data-aos="fade-up"
+               data-aos-delay="200">
+
+                Explore our security, surveillance, fire safety, biometric and infrastructure work delivered for businesses and institutions.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- GALLERY SECTION -->
+    <!-- ========================= -->
+
+    <section class="relative py-24 md:py-32 overflow-hidden">
+
+        <div class="absolute inset-0 pointer-events-none opacity-[0.03]"
+             style="
+                background-image:
+                linear-gradient(to right, white 1px, transparent 1px),
+                linear-gradient(to bottom, white 1px, transparent 1px);
+                background-size: 80px 80px;
+             ">
+        </div>
+
+        <div class="container-custom relative z-10">
+
+            <!-- CATEGORY BUTTONS -->
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-14"
+                 data-aos="fade-up">
+
+                <button class="gallery-filter active-filter px-5 py-3 rounded-full border border-blue-500 bg-blue-500/20 text-blue-300 text-sm"
+                        data-filter="all">
+                    All
+                </button>
+
+                <button class="gallery-filter px-5 py-3 rounded-full border border-white/10 bg-white/5 hover:border-blue-500/40 transition text-sm"
+                        data-filter="cctv">
+                    CCTV
+                </button>
+
+                <button class="gallery-filter px-5 py-3 rounded-full border border-white/10 bg-white/5 hover:border-blue-500/40 transition text-sm"
+                        data-filter="fire">
+                    Fire Safety
+                </button>
+
+                <button class="gallery-filter px-5 py-3 rounded-full border border-white/10 bg-white/5 hover:border-blue-500/40 transition text-sm"
+                        data-filter="biometric">
+                    Biometric
+                </button>
+
+                <button class="gallery-filter px-5 py-3 rounded-full border border-white/10 bg-white/5 hover:border-blue-500/40 transition text-sm"
+                        data-filter="solar">
+                    Solar
+                </button>
+
+                <button class="gallery-filter px-5 py-3 rounded-full border border-white/10 bg-white/5 hover:border-blue-500/40 transition text-sm"
+                        data-filter="enterprise">
+                    Enterprise
+                </button>
+
+<button class="gallery-filter px-5 py-3 rounded-full border border-white/10 bg-white/5 hover:border-blue-500/40 transition text-sm"
+        data-filter="maintenance">
+    Maintenance
+</button>
+
+            </div>
+
+            <!-- GALLERY GRID -->
+            <!-- GALLERY GRID -->
+<div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
+
+    {% for project in projects %}
+
+        <div class="gallery-item group relative rounded-[28px] overflow-hidden"
+             data-category="{{ project.category }}"
+             data-aos="fade-up">
+
+            <img src="{{ project.image.url }}"
+            alt="{{ project.title }}"
+            loading="lazy"
+            decoding="async"
+            class="w-full h-[300px] md:h-[340px] object-cover group-hover:scale-110 transition duration-700">
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+
+            <div class="absolute bottom-0 left-0 p-6">
+
+                <p class="text-blue-400 text-xs uppercase tracking-[3px]">
+                    {{ project.get_category_display }}
+                </p>
+
+                <h3 class="text-2xl font-bold mt-3">
+                    {{ project.title }}
+                </h3>
+
+                {% if project.location %}
+
+                    <p class="text-gray-300 text-sm mt-2">
+                        {{ project.location }}
+                    </p>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    {% empty %}
+
+        <div class="col-span-full text-center glass-effect rounded-[28px] p-10">
+
+            <h3 class="text-2xl font-bold">
+                No gallery projects added yet.
+            </h3>
+
+            <p class="text-gray-400 mt-3">
+                Add projects from the Django admin panel.
+            </p>
+
+        </div>
+
+    {% endfor %}
+
+</div>
+
+                <!-- ITEM 2 -->
+                
+
+            
+
+    </section>
+
+    <!-- ========================= -->
+<!-- SOCIAL WORK CTA -->
+<!-- ========================= -->
+
+<div class="mt-20 md:mt-24"
+     data-aos="fade-up">
+
+    <div class="glass-effect rounded-[28px] md:rounded-[36px] p-8 md:p-12 text-center">
+
+        <p class="uppercase tracking-[4px] text-blue-400 text-sm mb-5">
+            Explore More Work
+        </p>
+
+        <h2 class="text-3xl md:text-4xl font-black leading-tight">
+            Follow Our Latest Projects
+        </h2>
+
+        <p class="text-gray-400 mt-5 max-w-2xl mx-auto leading-relaxed">
+            Visit our social media profiles to explore more project updates, installation work, security solutions and recent site activity.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+
+            <a href="https://instagram.com/"
+               target="_blank"
+               class="btn-primary w-full sm:w-auto gap-3">
+
+                <i class="fa-brands fa-instagram"></i>
+                View Instagram
+
+            </a>
+
+            <a href="https://wa.me/919876543210?text=Hello%20Surve%20Prozone,%20I%20want%20to%20know%20more%20about%20your%20work."
+               target="_blank"
+               class="btn-secondary w-full sm:w-auto gap-3">
+
+                <i class="fa-brands fa-whatsapp"></i>
+                Chat on WhatsApp
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- ========================= -->
+    <!-- CTA SECTION -->
+    <!-- ========================= -->
+
+    <section class="relative py-24 overflow-hidden">
+
+        <div class="container-custom relative z-10">
+
+            <div class="glass-effect rounded-[30px] md:rounded-[40px] p-8 md:p-14 text-center"
+                 data-aos="fade-up">
+
+                <p class="uppercase tracking-[4px] text-blue-400 text-sm mb-5">
+                    Start Your Project
+                </p>
+
+                <h2 class="section-title">
+                    Need A Similar Security Setup?
+                </h2>
+
+                <p class="section-subtitle mt-6 max-w-2xl mx-auto">
+                    Connect with our team for CCTV, biometric, fire safety, solar and enterprise security infrastructure solutions.
+                </p>
+
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+
+                    <a href="{% url 'home' %}#contact"
+                       class="btn-primary w-full sm:w-auto">
+                        Get Consultation
+                    </a>
+
+                    <a href="https://wa.me/919876543210?text=Hello%20Surve%20Prozone,%20I%20need%20security%20consultation."
+                       target="_blank"
+                       class="btn-secondary w-full sm:w-auto">
+                        WhatsApp Chat
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/919876543210?text=Hello%20Surve%20Prozone,%20I%20need%20security%20consultation."
+       target="_blank"
+       class="fixed bottom-6 right-6 z-[999999] w-16 h-16 rounded-full bg-green-500 flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300">
+
+        <span class="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-30"></span>
+
+        <i class="fa-brands fa-whatsapp relative z-10 text-white text-4xl"></i>
+
+    </a>
+
+    <!-- MAIN JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+
+        AOS.init({
+            duration: 1200,
+            once: true,
+        });
+
+    </script>
+
+</body>
+
+</html>
