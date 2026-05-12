@@ -53,7 +53,7 @@ Message:
                         email_message,
                         settings.EMAIL_HOST_USER,
                         [settings.EMAIL_HOST_USER],
-                        fail_silently=False,
+                        fail_silently=True,
                     )
 
                     messages.success(

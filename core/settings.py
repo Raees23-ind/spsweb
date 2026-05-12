@@ -147,6 +147,7 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
+EMAIL_TIMEOUT = 10
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.onrender.com',
