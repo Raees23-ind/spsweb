@@ -157,3 +157,5 @@ EMAIL_TIMEOUT = 10
 CSRF_TRUSTED_ORIGINS = [
     'https://surveprozone.onrender.com',
 ]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
