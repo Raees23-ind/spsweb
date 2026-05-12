@@ -29,9 +29,7 @@ def home(request):
         form = EnquiryForm(request.POST)
 
         if form.is_valid():
-
             try:
-
                 enquiry = form.save()
 
                 subject = "New Website Enquiry - Surve Prozone"
@@ -53,25 +51,20 @@ Message:
                         email_message,
                         settings.EMAIL_HOST_USER,
                         [settings.EMAIL_HOST_USER],
-                        fail_silently=True,
+                        fail_silently=False,
                     )
+                    print("EMAIL SENT SUCCESSFULLY")
+                except Exception as e:
+                    print("EMAIL ERROR:", e)
 
-                    messages.success(
-                        request,
-                        "Your enquiry has been submitted successfully. Our team will contact you soon."
-                    )
-
-                except Exception:
-
-                    messages.success(
-                        request,
-                        "Your enquiry has been submitted successfully. Our team will contact you soon."
-                    )
+                messages.success(
+                    request,
+                    "Your enquiry has been submitted successfully. Our team will contact you soon."
+                )
 
                 return redirect('/#contact')
 
             except IntegrityError:
-
                 messages.error(
                     request,
                     "You have already submitted an enquiry with this email and phone number. Our team will contact you soon."
@@ -80,7 +73,6 @@ Message:
                 return redirect('/#contact')
 
         else:
-
             messages.error(
                 request,
                 "Please correct the errors below and submit again."
@@ -92,6 +84,7 @@ Message:
         'form': form,
         'featured_projects': featured_projects
     })
+
 
 def robots_txt(request):
     content = render(request, 'robots.txt')
