@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=200)),
-                ('category', models.CharField(choices=[('cctv', 'CCTV'), ('fire', 'Fire Safety'), ('biometric', 'Biometric'), ('solar', 'Solar'), ('enterprise', 'Enterprise'), ('maintenance', 'Maintenance')], max_length=50)),
+                ('category', models.CharField(choices=[('cctv', 'CCTV'), ('biometric', 'Biometric'), ('solar', 'Solar'), ('enterprise', 'Enterprise'), ('maintenance', 'Maintenance')], max_length=50)),
                 ('image', models.ImageField(upload_to='gallery/')),
                 ('location', models.CharField(blank=True, max_length=200, null=True)),
                 ('description', models.TextField(blank=True, null=True)),

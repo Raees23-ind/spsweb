@@ -61,7 +61,6 @@ class GalleryProject(models.Model):
 
     CATEGORY_CHOICES = [
         ('cctv', 'CCTV'),
-        ('fire', 'Fire Safety'),
         ('biometric', 'Biometric'),
         ('solar', 'Solar'),
         ('enterprise', 'Enterprise'),
